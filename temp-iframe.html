@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="layui/layui/css/layui.css">
+    <link rel="stylesheet" href="css/temp-iframe.css">
+</head>
+<body>
+<form class="layui-form" action="">
+    <div class="layui-form-item">
+        <label class="layui-form-label">新建模板：</label>
+        <div class="layui-input-block">
+            <input type="text" name="title" required  lay-verify="required" placeholder="新建模板" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">模板编号：</label>
+        <div class="layui-input-block">
+            <input type="text" name="title" required  lay-verify="required" placeholder="无" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">备注：</label>
+        <div class="layui-input-block">
+            <input type="text" name="title" required  lay-verify="required" placeholder="无" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+
+    <div class="kaopingleimu">
+        <div class="leimu">
+            <div class="layui-form-item">
+                <label class="layui-form-label">考评类目1：</label>
+                <div class="layui-input-block">
+                    <input type="text" name="title" required  lay-verify="required" placeholder="类目" autocomplete="off" class="layui-input"><span class="jialeimu" style="float: left">+</span><span class="jianleimu" style="float: left">-</span>
+                </div>
+            </div>
+        </div>
+        <div class="kaopinxiang">
+            <div class="layui-form-item">
+                <label class="layui-form-label">考评项1：</label>
+                <div class="layui-input-block">
+                    <input type="text" name="title" required  lay-verify="required" placeholder="问题" autocomplete="off" class="layui-input"><span class="jiawenti" style="float: left">+</span><span class="jianwenti" style="float: left">-</span>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">考评项2：</label>
+                <div class="layui-input-block">
+                    <input type="text" name="title" required  lay-verify="required" placeholder="问题" autocomplete="off" class="layui-input"><span class="jiawenti" style="float: left">+</span><span class="jianwenti" style="float: left">-</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">考评建议：</label>
+        <div class="layui-input-block">
+            <textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+        </div>
+    </div>
+</form>
+<hr />
+<div class="anniu">
+    <button class="layui-btn queren">确认</button>
+    <button class="layui-btn tuichu">退出</button>
+</div>
+</body>
+<script src="layui/layui/layui.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script>
+    layui.use('layer', function(){
+        var layer = layui.layer;
+        $('.queren').eq(0).click(function(){
+            layer.open({
+                title:'提示',
+                content :'确定修改？',
+                btn: ['确认','取消'],
+                icon:7
+            })
+        })
+        $('.tuichu').eq(0).click(function(){
+            layer.open({
+                title:'提示',
+                content :'确定取消？',
+                btn: ['确认','取消'],
+                icon:7
+            })
+        })
+    });
+
+    //加按钮&减按钮
+
+    //普通方法
+    var jialeimu = document.querySelectorAll('.jialeimu')
+    var jianleimu = document.querySelectorAll('.jianleimu')
+    var jiawenti = document.querySelectorAll('.jiawenti')
+    var jianwenti = document.querySelectorAll('.jianwenti')
+    var kaopingleimu = document.querySelector('.kaopingleimu')
+    var kaopinxiang =document.querySelectorAll('.kaopinxiang')
+    var leimu = document.querySelectorAll('.leimu')
+
+    jianleimu[0].style.display = "none"
+    jianwenti[0].style.display = "none"
+    function fn() {
+
+        //类目加号循环
+        for (var i = 0; i < jialeimu.length; i++) {
+            jialeimu[i].onclick = function () {
+                //类目最外围div
+                var leimu1 = document.createElement("div")
+                kaopingleimu.append(leimu1)
+                leimu1.className = "leimu"
+                //包裹label跟div的div
+                var jialeimu1 = document.createElement('div')
+                leimu1.appendChild(jialeimu1)
+                jialeimu1.className = "layui-form-item";
+                //类目label
+                var label1 = document.createElement('label')
+                jialeimu1.append(label1)
+                label1.className = "layui-form-label";
+                label1.innerText = "考评类目" + (jialeimu.length + 1) + "："
+                //类目外围div
+                var jialeimu2 = document.createElement('div')
+                jialeimu2.className = "layui-input-block"
+                jialeimu1.appendChild(jialeimu2)
+                //input
+                var inp = document.createElement("input")
+                jialeimu2.appendChild(inp)
+                inp.type = "text"
+                inp.placeholder = "类目" + (jialeimu.length + 1)
+                inp.className = 'layui-input'
+                //加
+                var span1 = document.createElement('span')
+                jialeimu2.append(span1)
+                span1.className = "jialeimu"
+                span1.innerText = "+"
+                //减
+                var span2 = document.createElement('span')
+                jialeimu2.append(span2)
+                span2.className = "jianleimu"
+                span2.innerText = "-"
+
+                //创建考评项最外围div
+                var kaopinxiang = document.createElement("div")
+                kaopingleimu.append(kaopinxiang)
+                kaopinxiang.className = "kaopinxiang"
+                //创建包裹考评项label跟div的div
+                var wenti1 = document.createElement('div')
+                wenti1.className = "layui-form-item"
+                kaopinxiang.appendChild(wenti1)
+                //创建考评项label
+                var label2 = document.createElement('label')
+                wenti1.append(label2)
+                label2.className = "layui-form-label";
+                label2.innerText = "考评项1："
+                //创建input包裹的div
+                var wenti2 = document.createElement('div')
+                wenti2.className = "layui-input-block"
+                wenti1.appendChild(wenti2)
+                //创建问题的input
+                var inp1 = document.createElement("input")
+                wenti2.appendChild(inp1)
+                inp1.className = "layui-input"
+                inp1.type = "text"
+                inp1.placeholder = "问题1"
+                //加
+                var span3 = document.createElement('span')
+                wenti2.append(span3)
+                span3.className = "jiawenti"
+                span3.innerText = "+"
+                //减
+                var span4 = document.createElement('span')
+                wenti2.append(span4)
+                span4.className = "jianwenti"
+                span4.innerText = "-"
+
+
+                jialeimu = document.querySelectorAll('.jialeimu')
+                jianleimu = document.querySelectorAll('.jianleimu')
+                jiawenti = document.querySelectorAll('.jiawenti')
+                jianwenti = document.querySelectorAll('.jianwenti')
+                kaopinxiang =document.querySelectorAll('.kaopinxiang')
+                leimu = document.querySelectorAll('.leimu')
+                //去除首个考评项减号
+                for(var i = 0 ; i<kaopinxiang.length ;i++) {
+                    jiawenti1 = kaopinxiang[i].querySelectorAll('.jiawenti')
+                    jianwenti1 = kaopinxiang[i].querySelectorAll('.jianwenti')
+                    jianwenti1[0].style.display = "none"
+                }
+                fn()
+            }
+        }
+        //类目减号for循环
+        for (var i = 0; i < jialeimu.length; i++) {
+            (function(i){
+                jianleimu[i].onclick = function(){
+                    jialeimu = document.querySelectorAll('.jialeimu')
+                    jianleimu = document.querySelectorAll('.jianleimu')
+                    leimu = document.querySelectorAll('.leimu')
+                    kaopinxiang =document.querySelectorAll('.kaopinxiang')
+                    console.log(jialeimu.length)
+                    leimu[i].remove()
+                    kaopinxiang[i].remove()
+                    jialeimu = document.querySelectorAll('.jialeimu')
+                    jianleimu = document.querySelectorAll('.jianleimu')
+                    leimu = document.querySelectorAll('.leimu')
+                    kaopinxiang =document.querySelectorAll('.kaopinxiang')
+                    console.log(jialeimu.length)
+                    fn()
+                }
+            })(i)
+        }
+        //问题加号操作
+        kaopinxiang =document.querySelectorAll('.kaopinxiang')
+        for(var i = 0 ;i<kaopinxiang.length;i++){
+            (function(i){
+                jiawenti1 = kaopinxiang[i].querySelectorAll('.jiawenti')
+                jianwenti1 = kaopinxiang[i].querySelectorAll('.jianwenti')
+                delwenti1 = kaopinxiang[i].querySelectorAll('.layui-form-item')
+
+                for(var j = 0 ; j<jiawenti1.length ; j++){
+                    // jiawenti1[j].index = j;
+                    // jianwenti1[j].index=j;
+                    // delwenti[j].index = j ;
+                    jiawenti1[j].onclick = function(){
+                        jiawenti1 = kaopinxiang[i].querySelectorAll('.jiawenti')
+                        jianwenti1 = kaopinxiang[i].querySelectorAll('.jianwenti')
+                        delwenti1 = kaopinxiang[i].querySelectorAll('.layui-form-item')
+                        //创建包裹考评项label跟div的div
+                        var wenti1 = document.createElement('div')
+                        wenti1.className = "layui-form-item"
+                        kaopinxiang[i].appendChild(wenti1)
+                        //创建考评项label
+                        var label2 = document.createElement('label')
+                        wenti1.append(label2)
+                        label2.className = "layui-form-label";
+                        label2.innerText = "考评项1："
+                        //创建input包裹的div
+                        var wenti2 = document.createElement('div')
+                        wenti2.className = "layui-input-block"
+                        wenti1.appendChild(wenti2)
+                        //创建问题的input
+                        var inp1 = document.createElement("input")
+                        wenti2.appendChild(inp1)
+                        inp1.className = "layui-input"
+                        inp1.type = "text"
+                        inp1.placeholder = "问题1"
+                        //加
+                        var span3 = document.createElement('span')
+                        wenti2.append(span3)
+                        span3.className = "jiawenti"
+                        span3.innerText = "+"
+                        //减
+                        var span4 = document.createElement('span')
+                        wenti2.append(span4)
+                        span4.className = "jianwenti"
+                        span4.innerText = "-"
+                        fn()
+                    }
+                }
+            })(i)
+        }
+        //问题减
+        kaopinxiang =document.querySelectorAll('.kaopinxiang')
+        for(var i = 0 ;i<kaopinxiang.length;i++){
+            jianwenti1 = kaopinxiang[i].querySelectorAll('.jianwenti')
+            delwenti1 = kaopinxiang[i].querySelectorAll('.layui-form-item')
+            console.log(jianwenti1)
+            for(var j = 0 ;j<jianwenti1.length;j++){
+                (function(j){
+                    jianwenti1[j].onclick = function(){
+                        delwenti1[j].remove()
+                        fn()
+                        console.log(j)
+                    }
+                })(j)
+            }
+        }
+    }
+    fn()
+
+
+
+    //稍后做jq
+    // for(var i = 0 ; i < $('.jialeimu').length ; i++){
+    //     (function(i){
+    //         $('.jialeimu').eq(i).click(function(){
+    //
+    //         })
+    //     })(i)
+    // }
+</script>
+</html>

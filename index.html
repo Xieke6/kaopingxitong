@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="layui/layui/css/layui.css">
+</head>
+<body>
+    <div class="nav">
+        <img src="img/login_bg.png" class="login_bg" />
+        <div class="logo">
+            <img src="img/logo_login.png" class="logo_login" />
+            <div class="logo_div">
+                <p class="a">在线考评系统</p>
+                <p class="b">Online Evaluation System</p>
+            </div>
+        </div>
+    </div>
+    <form action="" class="layui-form layui-form-pane">
+        <div class="layui-form-item">
+            <label for="name" class="layui-form-label">用户名</label>
+            <div class="layui-input-block">
+                <input type="text" id="name" name="name" required  lay-verify="required" class="layui-input name">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label for="pwd" class="layui-form-label">密码</label>
+            <div class="layui-input-block">
+                <input type="password" id="pwd" name="password" required  lay-verify="required" class="layui-input pwd">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <button class="layui-btn" lay-submit lay-filter="formDemo">立即登陆</button>
+        </div>
+    </form>
+    <div class="bottom">
+        <p>©天创集团（中国）2017 版权所有</p>
+        <p>TianZhi Education Student Feedback Sysytem | 天智教育学院反馈系统 | 2009-2020</p>
+    </div>
+</body>
+<script src="layui/layui/layui.js"></script>
+<script>
+    //Demo
+    layui.use('form', function(){
+        var form = layui.form;
+
+        //监听提交
+        form.on('submit(formDemo)', function(data){
+            layer.msg(JSON.stringify(data.field),function(){
+                window.location.href="unChecked.html"
+            })
+            return false;
+        });
+    });
+</script>
+</html>

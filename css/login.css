@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+.nav {
+  width: 100%;
+  position: relative; }
+  .nav .login_bg {
+    width: 100%; }
+  .nav .logo {
+    display: inline-block;
+    width: 278px;
+    height: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%); }
+    .nav .logo .logo_login {
+      height: 80px;
+      float: left; }
+    .nav .logo .logo_div {
+      margin-left: 10px;
+      float: left;
+      text-align: center; }
+      .nav .logo .logo_div p {
+        color: white;
+        font-weight: 700; }
+      .nav .logo .logo_div .a {
+        font-size: 30px;
+        line-height: 50px; }
+      .nav .logo .logo_div .b {
+        font-size: 13px;
+        line-height: 20px; }
+
+.layui-form {
+  width: 310px;
+  margin: 50px auto 0; }
+  .layui-form .layui-form-item {
+    width: 310px; }
+    .layui-form .layui-form-item .layui-btn {
+      width: 300px;
+      background-color: #1c7beb; }
+
+body {
+  height: 100vh;
+  position: relative; }
+  body .bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: #999999; }

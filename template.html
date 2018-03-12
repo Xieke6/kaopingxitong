@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>layout 后台大布局 - Layui</title>
+    <link rel="stylesheet" href="layui/layui/css/layui.css">
+    <link rel="stylesheet" href="css/template.css">
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo"><img src="img/logo_nav.png" class="logo_nav"></div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-left">
+            <li class="layui-nav-item"><a href="">苏州天智软件学院中国IT培训专家</a></li>
+        </ul>
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                <a href="javascript:;">
+                    <img src="img/chrome.png" class="layui-nav-img">
+                    admin
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a href="information.html">基本资料</a></dd>
+                    <dd><a href="password.html">密码修改</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item"><a href="login.html">退出</a></li>
+        </ul>
+    </div>
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a class="" href="javascript:;">考评管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="unChecked.html">未审查询</a></dd>
+                        <dd><a href="Checked.html">已审查询</a></dd>
+                        <dd><a href="reviewList.html" >考评列表</a></dd>
+                        <dd><a href="template.html" class="layui-this">考评模板</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">班级管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="newclass.html">新增班级</a></dd>
+                        <dd><a href="modifyclass.html">修改班级</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">统计分析</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="month.html">按月统计</a></dd>
+                        <dd><a href="quarter.html">按季统计</a></dd>
+                        <dd><a href="year.html">按年统计</a></dd>
+                    </dl>
+                </li><li class="layui-nav-item">
+                <a href="javascript:;">用户管理</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="userList.html">用户列表</a></dd>
+                    <dd><a href="userPermission.html">角色权限</a></dd>
+                </dl>
+            </li><li class="layui-nav-item">
+                <a href="javascript:;">个人中心</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="information.html">个人信息</a></dd>
+                    <dd><a href="password.html">修改密码</a></dd>
+                </dl>
+            </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div><span>考评管理</span><span class="span1">考评模板</span></div>
+        <div class="contain">
+            <div class="jilu">
+                找到<span>5</span>条记录
+                <button class="layui-btn" id="xinzeng">新增模板</button>
+            </div>
+            <hr />
+            <table class="layui-table" lay-skin="line">
+                <tbody class="tbody">
+                <tr>
+                    <td><input type="checkbox" name="checkbox" id="quanxuan"/><span>全选</span></td>
+                    <td>模板编号</td>
+                    <td>模板名称</td>
+                    <td>备注</td>
+                    <td>状态</td>
+                    <td>操作</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="checkbox" class="danxuan"/><span></span></td>
+                    <td>1000</td>
+                    <td>测试模板1</td>
+                    <td>xieke</td>
+                    <td>禁用</td>
+                    <td class="caozuo"><span>预览</span><span class="bianji">编辑</span><span class="fuzhi">复制</span></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="checkbox"class="danxuan"/><span class="fuzhi"></span></td>
+                    <td>1000</td>
+                    <td>测试模板2</td>
+                    <td>xieke</td>
+                    <td>禁用</td>
+                    <td class="caozuo"><span>预览</span><span class="bianji">编辑</span><span class="fuzhi">复制</span></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="checkbox"class="danxuan"/><span></span></td>
+                    <td>1000</td>
+                    <td>测试模板3</td>
+                    <td>xieke</td>
+                    <td>禁用</td>
+                    <td class="caozuo"><span>预览</span><span class="bianji">编辑</span><span class="fuzhi">复制</span></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="checkbox"class="danxuan"/><span></span></td>
+                    <td>1000</td>
+                    <td>测试模板4</td>
+                    <td>xieke</td>
+                    <td>禁用</td>
+                    <td class="caozuo"><span>预览</span><span class="bianji">编辑</span><span class="fuzhi">复制</span></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="checkbox"class="danxuan"/><span></span></td>
+                    <td>1000</td>
+                    <td>测试模板5</td>
+                    <td>xieke</td>
+                    <td>禁用</td>
+                    <td class="caozuo"><span>预览</span><span class="bianji">编辑</span><span class="fuzhi">复制</span></td>
+                </tr>
+                </tbody>
+            </table>
+            <div id="demo3">
+                <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+                    <legend>自定义首页、尾页、上一页、下一页文本</legend>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+    <div class="layui-footer">
+        <!-- 底部固定区域 -->
+            <p>©天创集团（中国）2017 版权所有</p>
+            <p>TianZhi Education Student Feedback Sysytem | 天智教育学院反馈系统 | 2009-2020</p>
+    </div>
+</div>
+<script src="layui/layui/layui.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script>
+    //JavaScript代码区域
+    layui.use('element', function(){
+        var element = layui.element;
+
+    });
+</script>
+<script>
+    layui.use('laypage', function(){
+        var laypage = layui.laypage;
+        //执行一个laypage实例
+        laypage.render({
+            elem: 'demo3'
+            ,count: 100
+            ,first: '首页'
+            ,last: '尾页'
+            ,prev: '<em>上一页</em>'
+            ,next: '<em>下一页</em>'
+        });
+    });
+</script>
+<script>
+    //Demo
+    layui.use('form', function(){
+        var form = layui.form;
+
+        //监听提交
+        form.on('submit(formDemo)', function(data){
+            layer.msg(JSON.stringify(data.field));
+            return false;
+        });
+    });
+</script>
+<script>
+    //全选操作
+    $('#quanxuan').change(function(){
+        if($('#quanxuan').prop('checked')){
+            for(var i = 0 ; i<$('.danxuan').length ;i++){
+                $('.danxuan').eq(i).prop("checked", true);
+            }
+        }else{
+            for(var i = 0 ; i<$('.danxuan').length ;i++){
+                $('.danxuan').eq(i).prop("checked", false);
+            }
+        }
+    })
+    console.log($('#xinzeng'))
+    layui.use(['layer', 'form'], function() {
+        var layer = layui.layer,
+            form = layui.form;
+        $('#xinzeng').click(function(){
+            console.log('1')
+            layer.open({
+                type: 2,
+                title: '考评模板编辑',
+                shadeClose: true,
+                shade: 0.8,
+                area: ['700px', '90%'],
+                content: '/temp-iframe.html'
+            })
+        })
+    });
+    function fn(){
+        for(var i = 0 ; i < $('.bianji').length;i++){
+            (function(i){
+                $('.bianji').eq(i).click(function(){
+                    layer.open({
+                        type: 2,
+                        title: '考评模板编辑',
+                        shadeClose: true,
+                        shade: 0.8,
+                        area: ['700px', '90%'],
+                        content: '/temp-iframe.html'
+                    })
+                })
+            })(i)
+        }
+    }
+    fn()
+
+    var tbody = document.querySelector('.tbody')
+    var tr =tbody.querySelectorAll('tr')
+    function fn1(){
+        for(var i = 0 ; i<$('.fuzhi').length;i++){
+            (function(i){
+                $('.fuzhi').eq(i).click(function(){
+                    var trr = document.createElement('tr')
+                    tbody.insertBefore(trr,tr[1])
+                    var td1 = document.createElement('td')
+                    trr.appendChild(td1)
+                    var inp = document.createElement('input')
+                    td1.appendChild(inp)
+                    inp.type = "checkbox"
+                    inp.name = "checkbox"
+                    inp.className = "danxuan"
+
+                    var td2 = document.createElement('td')
+                    trr.appendChild(td2)
+                    td2.innerText = "1000"
+                    var td3 = document.createElement('td')
+                    trr.appendChild(td3)
+                    td3.innerText = "测试模板"
+                    var td4 = document.createElement('td')
+                    trr.appendChild(td4)
+                    td4.innerText = "xieke"
+                    var td5 = document.createElement('td')
+                    trr.appendChild(td5)
+                    td5.innerText = "禁用"
+                    var td6 = document.createElement('td')
+                    trr.appendChild(td6)
+                    td6.className = "caozuo"
+                    var span1 = document.createElement('span')
+                    td6.appendChild(span1)
+                    span1.innerText = "预览"
+                    var span2 = document.createElement('span')
+                    td6.appendChild(span2)
+                    span2.innerText = "编辑"
+                    span2.className = "bianji"
+                    var span3 = document.createElement('span')
+                    td6.appendChild(span3)
+                    span3.innerText = "复制"
+                    span3.className = "fuzhi"
+                })
+            })(i)
+        }
+    }
+    fn1()
+</script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+.logo_nav{
+  width: 140px;
+}
+.layui-layout{
+  .layui-header{
+    background: #1E9FFF;
+  }
+}
+.layui-nav{
+  .layui-nav-item{
+    .layui-nav-child{
+      .layui-this{
+        background-color: black;
+        a{
+          background-color: black;
+        }
+      }
+    }
+  }
+}
+.layui-footer{
+  text-align: center;
+  p{
+    line-height: 22px;
+    color: #999;
+  }
+}
+.layui-body{
+  background-color: #f4f8fb;
+  padding: 12px 20px;
+  #body1{
+    div{
+      .span1{
+        margin-left:10px ;
+        color: #999999;
+      }
+    }
+    .contain{
+      min-height: 510px;
+      padding: 15px;
+      min-width: 1000px;
+      background-color: white;
+      .jilu{
+        border-bottom: none;
+        border-top: none;
+        border-right: none;
+        border-left: 5px solid #1E9FFF;
+        padding: 5px 15px;
+        .search{
+          float: right;
+          .layui-input{
+            height: 29px;
+            width: 200px;
+            float: left;
+          }
+          .layui-btn{
+            height: 29px;
+            line-height: 29px;
+            margin: 0;
+            background: #1E9FFF;
+            margin-left: 5px;
+          }
+        }
+      }
+      .layui-table{
+        tbody{
+          tr{
+            td{
+              span{
+                color: #1c7beb;
+                cursor: pointer;
+              }
+              span:hover{
+                color: #777;
+              }
+            }
+          }
+        }
+      }
+      .layui-btn{
+        height: 30px;
+        margin: 10px;
+        line-height: 30px;
+        background-color: #1c7beb;
+      }
+      #demo3{
+        float: right;
+        .layui-laypage-em{
+          background: #1c7beb;
+        }
+      }
+    }
+  }
+  #body2{
+    div{
+      #fanhui{
+        color: #777;
+        cursor: pointer;
+      }
+    }
+    .contain{
+      .gaiyao {
+        padding:15px 10px;
+        background: white;
+      }
+      .xiangxi{
+        margin-top: 10px;
+        padding:15px 10px;
+        background: white;
+        .layui-table{
+          tr{
+            td{
+              .span1{
+                display: inline-block;
+                width: 100px;
+                height: 8px;
+                background: #75ABE9;
+              }
+              .chakan{
+                color: #1c7beb;
+                cursor: pointer;
+              }
+              .chakan:hover{
+                color: #777;
+              }
+            }
+          }
+        }
+        .footer{
+          margin-top: 10px;
+        }
+        .layui-btn{
+          height: 30px;
+          line-height: 30px;
+          margin-top: 10px;
+          background: #1E9FFF;
+        }
+      }
+      .jilu{
+        border-bottom: none;
+        border-top: none;
+        border-right: none;
+        border-left: 5px solid #1E9FFF;
+        padding: 5px 15px;
+        margin:5px 0px ;
+      }
+      .layui-table{
+        margin: 0;
+      }
+    }
+  }
+}
+

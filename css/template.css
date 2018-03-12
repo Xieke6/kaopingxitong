@@ -1,0 +1,51 @@
+.logo_nav {
+  width: 140px; }
+
+.layui-layout .layui-header {
+  background: #1E9FFF; }
+
+.layui-nav .layui-nav-item .layui-nav-child .layui-this {
+  background-color: black; }
+  .layui-nav .layui-nav-item .layui-nav-child .layui-this a {
+    background-color: black; }
+
+.layui-footer {
+  text-align: center; }
+  .layui-footer p {
+    line-height: 22px;
+    color: #999; }
+
+.layui-body {
+  background-color: #f4f8fb;
+  padding: 12px 20px; }
+  .layui-body div .span1 {
+    margin-left: 10px;
+    color: #999999; }
+  .layui-body .contain {
+    overflow: hidden;
+    min-height: 510px;
+    padding: 15px;
+    min-width: 1000px;
+    background-color: white; }
+    .layui-body .contain .jilu {
+      border-bottom: none;
+      border-top: none;
+      border-right: none;
+      border-left: 5px solid #1E9FFF;
+      padding: 5px 15px;
+      height: 30px; }
+      .layui-body .contain .jilu .layui-btn {
+        height: 30px;
+        line-height: 30px;
+        float: right;
+        background: #1E9FFF; }
+    .layui-body .contain .layui-table tbody tr .caozuo span {
+      margin-right: 3px;
+      color: #1c7beb;
+      cursor: pointer; }
+    .layui-body .contain .layui-table tbody tr .caozuo span:hover {
+      color: #777; }
+    .layui-body .contain #demo3 {
+      float: right; }
+      .layui-body .contain #demo3 .layui-laypage-em {
+        background: #1E9FFF; }

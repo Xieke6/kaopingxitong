@@ -1,0 +1,81 @@
+.logo_nav{
+  width: 140px;
+}
+.layui-layout{
+  .layui-header{
+    background: #1E9FFF;
+  }
+}
+.layui-nav{
+  .layui-nav-item{
+    .layui-nav-child{
+      .layui-this{
+        background-color: black;
+        a{
+          background-color: black;
+        }
+      }
+    }
+  }
+}
+.layui-footer{
+  text-align: center;
+  p{
+    line-height: 22px;
+    color: #999;
+  }
+}
+.layui-body{
+  background-color: #f4f8fb;
+  padding: 12px 20px;
+  div{
+    .span1{
+      margin-left:10px ;
+      color: #999999;
+    }
+  }
+  .contain{
+    overflow: hidden;
+    min-height: 510px;
+    padding: 15px;
+    min-width: 1000px;
+    background-color: white;
+
+    .jilu{
+      border-bottom: none;
+      border-top: none;
+      border-right: none;
+      border-left: 5px solid #1E9FFF;
+      padding: 5px 15px;
+      height: 30px;
+      .layui-btn{
+        height: 30px;
+        line-height: 30px;
+        float: right;
+        background:#1E9FFF;
+      }
+    }
+    .layui-table{
+      tbody{
+        tr{
+          .caozuo{
+            span{
+              margin-right: 3px;
+              color: #1c7beb;
+              cursor: pointer;
+            }
+            span:hover{
+              color: #777;
+            }
+          }
+        }
+      }
+    }
+    #demo3{
+      float: right;
+      .layui-laypage-em{
+        background: #1E9FFF;
+      }
+    }
+  }
+}

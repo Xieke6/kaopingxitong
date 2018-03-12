@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>layout 后台大布局 - Layui</title>
+    <link rel="stylesheet" href="layui/layui/css/layui.css">
+    <link rel="stylesheet" href="css/month.css">
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo"><img src="img/logo_nav.png" class="logo_nav"></div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-left">
+            <li class="layui-nav-item"><a href="">苏州天智软件学院中国IT培训专家</a></li>
+        </ul>
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                <a href="javascript:;">
+                    <img src="img/chrome.png" class="layui-nav-img">
+                    admin
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a href="information.html">基本资料</a></dd>
+                    <dd><a href="password.html">密码修改</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item"><a href="index.html">退出</a></li>
+        </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+                <li class="layui-nav-item ">
+                    <a class="" href="javascript:;">考评管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="unChecked.html">未审查询</a></dd>
+                        <dd><a href="Checked.html">已审查询</a></dd>
+                        <dd><a href="reviewList.html">考评列表</a></dd>
+                        <dd><a href="template.html">考评模板</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">班级管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="newclass.html">新增班级</a></dd>
+                        <dd><a href="modifyclass.html">修改班级</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item  layui-nav-itemed">
+                    <a href="javascript:;">统计分析</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="month.html"  class="layui-this">按月统计</a></dd>
+                        <dd><a href="quarter.html">按季统计</a></dd>
+                        <dd><a href="year.html">按年统计</a></dd>
+                    </dl>
+                </li><li class="layui-nav-item">
+                <a href="javascript:;">用户管理</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="userList.html">用户列表</a></dd>
+                    <dd><a href="userPermission.html">角色权限</a></dd>
+                </dl>
+            </li><li class="layui-nav-item">
+                <a href="javascript:;">个人中心</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="information.html">个人信息</a></dd>
+                    <dd><a href="password.html">修改密码</a></dd>
+                </dl>
+            </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div id="body1">
+            <div><span>统计分析</span><span class="span1">按月统计</span></div>
+            <div class="contain">
+                <div class="jilu">
+                    <h2>月度报表查询</h2>
+                </div>
+                <hr />
+                    <div class="layui-form-item" style="float: left">
+                        <label class="layui-form-label" >月份选择：</label>
+                        <div class="layui-inline"> <!-- 注意：这一层元素并不是必须的 -->
+                            <input type="text" class="layui-input" id="test1" required lay-verify="required" placeholder="年份-月份" >
+                        </div>
+                    </div>
+                    <button class="layui-btn" lay-submit lay-filter="formDemo" id="chaxun" style="float: left">查询</button>
+                <table class="layui-table" lay-skin="line">
+                    <tbody><tr id="t1"></tr></tbody>
+                </table>
+                <table class="layui-table" lay-skin="line">
+                    <tbody><tr id="t2"></tr></tbody>
+                </table>
+                <table class="layui-table" lay-skin="line">
+                    <tbody><tr id="t3"></tr></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-footer">
+        <!-- 底部固定区域 -->
+        <p>©天创集团（中国）2017 版权所有</p>
+        <p>TianZhi Education Student Feedback Sysytem | 天智教育学院反馈系统 | 2009-2020</p>
+    </div>
+</div>
+<script src="layui/layui/layui.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script>
+    //JavaScript代码区域
+    layui.use('element', function(){
+        var element = layui.element;
+    });
+</script>
+<script>
+    layui.use('laydate', function(){
+        var laydate = layui.laydate;
+
+        //执行一个laydate实例
+        laydate.render({
+            elem: '#test1'
+            ,type: 'month'
+        });
+    });
+</script>
+<script>
+    //Demo
+
+</script>
+<script type="text/javascript">
+    layui.use('table', function() {
+        var table = layui.table;
+        console.log(table)
+
+        var data = [{
+            name: "张三",
+            aver_m: 4.6,
+            data: [{
+                id: 1,
+                name: "张三",
+                class: "jsd1222",
+                totalnum: 28,
+                effective_num: 20,
+                aver: 4.6,
+                date: "2017-08-16"
+            }, {
+                id: 2,
+                name: "张三",
+                class: "jsd1222",
+                totalnum: 23,
+                effective_num: 20,
+                aver: 4.8,
+                date: "2017-08-13"
+            }, {
+                id: 3,
+                name: "张三",
+                class: "jsd1222",
+                totalnum: 18,
+                effective_num: 15,
+                aver: 5,
+                date: "2017-07-16"
+            }]
+        }, {
+            name: "李四",
+            aver_m: 4.6,
+            data: [{
+                id: 1,
+                name: "李四",
+                class: "jsd1222",
+                totalnum: 28,
+                effective_num: 20,
+                aver: 4.6,
+                date: "2017-08-16"
+            }, {
+                id: 2,
+                name: "李四",
+                class: "jsd1222",
+                totalnum: 23,
+                effective_num: 20,
+                aver: 4.8,
+                date: "2017-08-13"
+            }, {
+                id: 3,
+                name: "李四",
+                class: "jsd1222",
+                totalnum: 18,
+                effective_num: 15,
+                aver: 5,
+                date: "2017-07-16"
+            }, {
+                id: 4,
+                name: "李四",
+                class: "jsd1222",
+                totalnum: 23,
+                effective_num: 20,
+                aver: 4.8,
+                date: "2017-08-13"
+            }, {
+                id: 5,
+                name: "李四",
+                class: "jsd1222",
+                totalnum: 18,
+                effective_num: 15,
+                aver: 5,
+                date: "2017-07-16"
+            }]
+
+        }, {
+
+            name: "王五",
+            aver_m: 4.6,
+            data: [{
+                id: 1,
+                name: "王五",
+                class: "jsd1222",
+                totalnum: 28,
+                effective_num: 20,
+                aver: 4.6,
+                date: "2017-08-16"
+            }, {
+                id: 2,
+                name: "王五",
+                class: "jsd1222",
+                totalnum: 23,
+                effective_num: 20,
+                aver: 4.8,
+                date: "2017-08-13"
+            }, {
+                id: 3,
+                name: "王五",
+                class: "jsd1222",
+                totalnum: 18,
+                effective_num: 15,
+                aver: 5,
+                date: "2017-07-16"
+            }]
+
+        }]
+        $('#chaxun').click(function(){
+            table.render({
+                elem: '#t1',
+                width: 900,
+                //url: '/demo/table/user/' //数据接口
+                data:data[0].data
+                ,
+//				page: true //开启分页
+//					,
+
+                cols: [
+                    [ //表头
+                        {
+                            field: 'id',
+                            title: 'ID'
+                        }, {
+                        field: 'date',
+                        title: '日期'
+                    }, {
+                        field: 'name',
+                        title: '教员'
+                    }, {
+                        field: 'class',
+                        title: '班级'
+                    }, {
+                        field: 'totalnum',
+                        title: '总份数'
+                    }, {
+                        field: 'effective_num',
+                        title: '有效份数'
+                    }, {
+                        field: 'aver',
+                        title: '平均分'
+                    }
+                    ]
+                ]
+            })
+            table.render({
+                elem: '#t2',
+                width: 900,
+                //url: '/demo/table/user/' //数据接口
+                data:data[1].data
+                ,
+//				page: true //开启分页
+//					,
+
+                cols: [
+                    [ //表头
+                        {
+                            field: 'id',
+                            title: 'ID'
+                        }, {
+                        field: 'date',
+                        title: '日期'
+                    }, {
+                        field: 'name',
+                        title: '教员'
+                    }, {
+                        field: 'class',
+                        title: '班级'
+                    }, {
+                        field: 'totalnum',
+                        title: '总份数'
+                    }, {
+                        field: 'effective_num',
+                        title: '有效份数'
+                    }, {
+                        field: 'aver',
+                        title: '平均分'
+                    }
+                    ]
+                ]
+            })
+            table.render({
+                elem: '#t3',
+                width: 900,
+                //url: '/demo/table/user/' //数据接口
+                data:data[2].data
+                ,
+//				page: true //开启分页
+//					,
+
+                cols: [
+                    [ //表头
+                        {
+                            field: 'id',
+                            title: 'ID'
+                        }, {
+                        field: 'date',
+                        title: '日期'
+                    }, {
+                        field: 'name',
+                        title: '教员'
+                    }, {
+                        field: 'class',
+                        title: '班级'
+                    }, {
+                        field: 'totalnum',
+                        title: '总份数'
+                    }, {
+                        field: 'effective_num',
+                        title: '有效份数'
+                    }, {
+                        field: 'aver',
+                        title: '平均分'
+                    }
+                    ]
+                ]
+            })
+        })
+    })
+</script>
+</body>
+</html>

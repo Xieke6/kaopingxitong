@@ -1,0 +1,51 @@
+.logo_nav{
+  width: 140px;
+}
+.layui-layout{
+  .layui-header{
+    background: #1E9FFF;
+  }
+}
+.layui-nav{
+  .layui-nav-item{
+    .layui-nav-child{
+      .layui-this{
+        background-color: black;
+        a{
+          background-color: black;
+        }
+      }
+    }
+  }
+}
+.layui-footer{
+  text-align: center;
+  p{
+    line-height: 22px;
+    color: #999;
+  }
+}
+.layui-body {
+  background-color: #f4f8fb;
+  padding: 12px 20px;
+  #body1 {
+    div {
+      .span1 {
+        margin-left: 10px;
+        color: #999999;
+      }
+    }
+    .contain {
+      padding: 15px;
+      background-color: white;
+      .jilu {
+        border-bottom: none;
+        border-top: none;
+        border-right: none;
+        border-left: 5px solid #1E9FFF;
+        padding: 5px 15px;
+      }
+    }
+  }
+}
+

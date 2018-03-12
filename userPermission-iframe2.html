@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="layui/layui/css/layui.css">
+    <style>
+        ul{
+            margin-top: 10px;
+        }
+        h3{
+            font-size: 20px;
+            margin-left: 30px;
+        }
+        li{
+            font-size: 15px;
+            margin-left: 60px;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <h3><input type="checkbox" name="checkbox" id="quanxuan1"/>考评管理</h3>
+    <li><input type="checkbox" name="checkbox" class="danxuan1"/>未审查询</li>
+    <li><input type="checkbox" name="checkbox" class="danxuan1"/>考评列表</li>
+    <li><input type="checkbox" name="checkbox" class="danxuan1"/>考评模板</li>
+    <li><input type="checkbox" name="checkbox" class="danxuan1"/>已审查询</li>
+</ul>
+<ul>
+    <h3><input type="checkbox" name="checkbox" id="quanxuan2"/>班级管理</h3>
+    <li><input type="checkbox" name="checkbox" class="danxuan2"/>新增班级</li>
+    <li><input type="checkbox" name="checkbox" class="danxuan2"/>修改班级</li>
+</ul>
+<ul>
+    <h3><input type="checkbox" name="checkbox" id="quanxuan3"/>统计分析</h3>
+    <li><input type="checkbox" name="checkbox" class="danxuan3"/>按月统计</li>
+    <li><input type="checkbox" name="checkbox" class="danxuan3"/>按季统计</li>
+    <li><input type="checkbox" name="checkbox" class="danxuan3"/>按年统计</li>
+</ul>
+<ul>
+    <h3><input type="checkbox" name="checkbox" id="quanxuan4"/>用户管理</h3>
+    <li><input type="checkbox" name="checkbox" class="danxuan4"/>用户列表</li>
+    <li><input type="checkbox" name="checkbox" class="danxuan4"/>角色权限</li>
+</ul>
+<ul>
+    <h3><input type="checkbox" name="checkbox" id="quanxuan5"/>个人中心</h3>
+    <li><input type="checkbox" name="checkbox" class="danxuan5"/>个人信息</li>
+    <li><input type="checkbox" name="checkbox" class="danxuan5"/>修改密码</li>
+</ul>
+</body>
+<script src="layui/layui/layui.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script>
+    //Demo
+    layui.use('form', function(){
+        var form = layui.form;
+
+        //监听提交
+        form.on('submit(formDemo)', function(data){
+            layer.msg(JSON.stringify(data.field));
+            return false;
+        });
+    });
+</script>
+<script>
+    //全选操作
+    $('#quanxuan1').change(function(){
+        if($('#quanxuan1').prop('checked')){
+            for(var i = 0 ; i<$('.danxuan1').length ;i++){
+                $('.danxuan1').eq(i).prop("checked", true);
+            }
+        }else{
+            for(var i = 0 ; i<$('.danxuan1').length ;i++){
+                $('.danxuan1').eq(i).prop("checked", false);
+            }
+        }
+    })
+</script>
+<script>
+    //全选操作
+    $('#quanxuan2').change(function(){
+        if($('#quanxuan2').prop('checked')){
+            for(var i = 0 ; i<$('.danxuan2').length ;i++){
+                $('.danxuan2').eq(i).prop("checked", true);
+            }
+        }else{
+            for(var i = 0 ; i<$('.danxuan2').length ;i++){
+                $('.danxuan2').eq(i).prop("checked", false);
+            }
+        }
+    })
+</script>
+<script>
+    //全选操作
+    $('#quanxuan3').change(function(){
+        if($('#quanxuan3').prop('checked')){
+            for(var i = 0 ; i<$('.danxuan3').length ;i++){
+                $('.danxuan3').eq(i).prop("checked", true);
+            }
+        }else{
+            for(var i = 0 ; i<$('.danxuan3').length ;i++){
+                $('.danxuan3').eq(i).prop("checked", false);
+            }
+        }
+    })
+</script>
+<script>
+    //全选操作
+    $('#quanxuan4').change(function(){
+        if($('#quanxuan4').prop('checked')){
+            for(var i = 0 ; i<$('.danxuan4').length ;i++){
+                $('.danxuan4').eq(i).prop("checked", true);
+            }
+        }else{
+            for(var i = 0 ; i<$('.danxuan4').length ;i++){
+                $('.danxuan4').eq(i).prop("checked", false);
+            }
+        }
+    })
+</script>
+<script>
+    //全选操作
+    $('#quanxuan5').change(function(){
+        if($('#quanxuan5').prop('checked')){
+            for(var i = 0 ; i<$('.danxuan5').length ;i++){
+                $('.danxuan5').eq(i).prop("checked", true);
+            }
+        }else{
+            for(var i = 0 ; i<$('.danxuan5').length ;i++){
+                $('.danxuan5').eq(i).prop("checked", false);
+            }
+        }
+    })
+</script>
+</html>

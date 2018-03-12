@@ -1,0 +1,69 @@
+.logo_nav{
+  width: 140px;
+}
+.layui-layout{
+  .layui-header{
+    background: #1E9FFF;
+  }
+}
+.layui-nav{
+  .layui-nav-item{
+    .layui-nav-child{
+      .layui-this{
+        background-color: black;
+        a{
+          background-color: black;
+        }
+      }
+    }
+  }
+}
+.layui-footer{
+  text-align: center;
+  p{
+    line-height: 22px;
+    color: #999;
+  }
+}
+.layui-body {
+  background-color: #f4f8fb;
+  padding: 12px 20px;
+  #body1 {
+    div {
+      .span1 {
+        margin-left: 10px;
+        color: #999999;
+      }
+    }
+    .contain {
+      min-height: 510px;
+      padding: 15px;
+      min-width: 1000px;
+      background-color: white;
+      .jilu {
+        border-bottom: none;
+        border-top: none;
+        border-right: none;
+        border-left: 5px solid #1E9FFF;
+        padding: 5px 15px;
+      }
+      .layui-table{
+        .quanxian{
+          cursor: pointer;
+          color: #1c7beb;
+          margin-right: 5px;
+        }
+        .quanxian:hover{
+          color: #999999;
+        }
+      }
+      #test1{
+        float: right;
+        .layui-laypage-em{
+          background-color: #1E9FFF;
+        }
+      }
+    }
+  }
+}
+

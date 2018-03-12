@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>layout 后台大布局 - Layui</title>
+    <link rel="stylesheet" href="layui/layui/css/layui.css">
+    <link rel="stylesheet" href="css/unChecked.css">
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo"><img src="img/logo_nav.png" class="logo_nav"></div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-left">
+            <li class="layui-nav-item"><a href="">苏州天智软件学院中国IT培训专家</a></li>
+        </ul>
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                <a href="javascript:;">
+                    <img src="img/chrome.png" class="layui-nav-img">
+                    admin
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a href="information.html">基本资料</a></dd>
+                    <dd><a href="password.html">密码修改</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item"><a href="index.html">退出</a></li>
+        </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a class="" href="javascript:;">考评管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="unChecked.html" class="layui-this">未审查询</a></dd>
+                        <dd><a href="Checked.html">已审查询</a></dd>
+                        <dd><a href="reviewList.html">考评列表</a></dd>
+                        <dd><a href="template.html">考评模板</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">班级管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="newclass.html">新增班级</a></dd>
+                        <dd><a href="modifyclass.html">修改班级</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">统计分析</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="month.html">按月统计</a></dd>
+                        <dd><a href="quarter.html">按季统计</a></dd>
+                        <dd><a href="year.html">按年统计</a></dd>
+                    </dl>
+                </li><li class="layui-nav-item">
+                <a href="javascript:;">用户管理</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="userList.html">用户列表</a></dd>
+                    <dd><a href="userPermission.html">角色权限</a></dd>
+                </dl>
+            </li><li class="layui-nav-item">
+                <a href="javascript:;">个人中心</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="information.html">个人信息</a></dd>
+                    <dd><a href="password.html">修改密码</a></dd>
+                </dl>
+            </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div id="body1">
+            <div><span>考评管理</span><span class="span1">未审查询</span></div>
+            <div class="contain">
+                <div class="jilu">
+                    找到<span>7</span>条记录
+                    <div class="search">
+                        <input type="text" class="layui-input" placeholder="请输入关键字...">
+                        <button class="layui-btn">搜索</button>
+                    </div>
+                </div>
+                <hr />
+                <table class="layui-table" lay-skin="line">
+                    <thead>
+                    <tr>
+                        <th>班级</th>
+                        <th>类型</th>
+                        <th>调查教员</th>
+                        <td>总分数</td>
+                        <td>有效分数</td>
+                        <td>平均分数</td>
+                        <td>调查日期</td>
+                        <td>操作</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>FED1707</td>
+                        <td>[alsd]大学生实训班</td>
+                        <td>jack</td>
+                        <td>8</td>
+                        <td>5</td>
+                        <td>5.0</td>
+                        <td>2017-0706</td>
+                        <td><span class="mingxi">明细</span></td>
+                    </tr>
+                    <tr>
+                        <td>FED1707</td>
+                        <td>[alsd]大学生实训班</td>
+                        <td>jack</td>
+                        <td>8</td>
+                        <td>5</td>
+                        <td>5.0</td>
+                        <td>2017-0706</td>
+                        <td><span class="mingxi">明细</span></td>
+                    </tr>
+                    <tr>
+                        <td>FED1707</td>
+                        <td>[alsd]大学生实训班</td>
+                        <td>jack</td>
+                        <td>8</td>
+                        <td>5</td>
+                        <td>5.0</td>
+                        <td>2017-0706</td>
+                        <td><span class="mingxi">明细</span></td>
+                    </tr>
+                    <tr>
+                        <td>FED1707</td>
+                        <td>[alsd]大学生实训班</td>
+                        <td>jack</td>
+                        <td>8</td>
+                        <td>5</td>
+                        <td>5.0</td>
+                        <td>2017-0706</td>
+                        <td><span class="mingxi">明细</span></td>
+                    </tr>
+                    <tr>
+                        <td>FED1707</td>
+                        <td>[alsd]大学生实训班</td>
+                        <td>jack</td>
+                        <td>8</td>
+                        <td>5</td>
+                        <td>5.0</td>
+                        <td>2017-0706</td>
+                        <td><span class="mingxi">明细</span></td>
+                    </tr>
+                    <tr>
+                        <td>FED1707</td>
+                        <td>[alsd]大学生实训班</td>
+                        <td>jack</td>
+                        <td>8</td>
+                        <td>5</td>
+                        <td>5.0</td>
+                        <td>2017-0706</td>
+                        <td><span class="mingxi">明细</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <button class="layui-btn">导出</button>
+                <div id="demo3">
+                    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+                        <legend>自定义首页、尾页、上一页、下一页文本</legend>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+        <div id="body2" style="display: none">
+            <div><span id="fanhui"><<返回未审查询</span></div>
+            <div class="contain">
+                <div class="gaiyao">
+                    <div class="jilu">概要信息</div>
+                    <table class="layui-table" lay-skin="line">
+                        <tbody>
+                        <tr>
+                            <td>教员：<span>ABC</span></td>
+                            <td>班级：<span>JSD1708</span></td>
+                            <td>调查开始时间：<span>2017-08-09</span></td>
+                            <td>调查结束时间：<span>2017-08-10</span></td>
+                        </tr>
+                        <tr>
+                            <td>状态：<span style="color: red">未审</span></td>
+                            <td>总份数：<span>8</span></td>
+                            <td>有效份数：<span>5</span></td>
+                            <td>平均分：<span>4.8</span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="xiangxi">
+                    <div class="jilu">详细信息</div>
+                    <table class="layui-table" lay-skin="line">
+                        <tbody>
+                        <tr>
+                            <td>序号</td>
+                            <td>班级管理</td>
+                            <td>讲师管理</td>
+                            <td>是否无效</td>
+                            <td>评分信息</td>
+                            <td>操作</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>goooooood</td>
+                            <td>niceeeeeeeee</td>
+                            <td><input type="checkbox" name="checkbox"/><span class="span2">有效</span></td>
+                            <td><span class="span1"></span>平均分<span>5.0</span></td>
+                            <td><span class="chakan">查看</span></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>goooooood</td>
+                            <td>niceeeeeeeee</td>
+                            <td><input type="checkbox" name="checkbox"/><span class="span2">有效</span></td>
+                            <td><span class="span1"></span>平均分<span>5.0</span></td>
+                            <td><span class="chakan">查看</span></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>goooooood</td>
+                            <td>niceeeeeeeee</td>
+                            <td><input type="checkbox" name="checkbox"/><span class="span2">有效</span></td>
+                            <td><span class="span1"></span>平均分<span>5.0</span></td>
+                            <td><span class="chakan">查看</span></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>goooooood</td>
+                            <td>niceeeeeeeee</td>
+                            <td><input type="checkbox" name="checkbox"/><span class="span2">有效</span></td>
+                            <td><span class="span1"></span>平均分<span>5.0</span></td>
+                            <td><span class="chakan">查看</span></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>goooooood</td>
+                            <td>niceeeeeeeee</td>
+                            <td><input type="checkbox" name="checkbox"/><span class="span2">有效</span></td>
+                            <td><span class="span1"></span>平均分<span>5.0</span></td>
+                            <td><span class="chakan">查看</span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="footer"><span>* </span>以上是本次调查的细节信息，您可以通过勾选有效/无效来设置调查表的有效性。（点击审核后设置生效）</div>
+                    <button class="layui-btn shenhe">审核</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-footer">
+        <!-- 底部固定区域 -->
+            <p>©天创集团（中国）2017 版权所有</p>
+            <p>TianZhi Education Student Feedback Sysytem | 天智教育学院反馈系统 | 2009-2020</p>
+    </div>
+</div>
+<script src="layui/layui/layui.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script>
+    //JavaScript代码区域
+    layui.use('element', function(){
+        var element = layui.element;
+
+    });
+</script>
+<script>
+    layui.use('laypage', function(){
+        var laypage = layui.laypage;
+        //执行一个laypage实例
+        laypage.render({
+            elem: 'demo3'
+            ,count: 100
+            ,first: '首页'
+            ,last: '尾页'
+            ,prev: '<em>上一页</em>'
+            ,next: '<em>下一页</em>'
+        });
+    });
+    for(var i = 0 ; i<$('.mingxi').length ;i++){
+        (function(i){
+            $('.mingxi').eq(i).click(function(){
+                $('#body1').css("display","none")
+                $('#body2').css("display","block")
+            })
+        })(i)
+    }
+    $('#fanhui').click(function(){
+        $('#body1').css("display","block")
+        $('#body2').css("display","none")
+    })
+</script>
+
+<script>
+    //复选框点击事件
+    var xiangxi = document.querySelector(".xiangxi")
+    var tr = xiangxi.querySelectorAll("tr")
+    for(var i = 0 ; i<tr.length ;i++){
+        (function(i){
+            var input = tr[i].querySelector("input")
+            var span1 = tr[i].querySelector(".span1")
+            var span2 = tr[i].querySelector(".span2")
+            tr[i].onclick = function(){
+                if(input.checked){
+                    span1.style.backgroundColor="#FA6869"
+                    span2.innerText='无效'
+                }else{
+                    span1.style.backgroundColor='#75ABE9'
+                    span2.innerText='有效'
+                }
+            }
+        })(i)
+    }
+    //审核弹出事件
+    layui.use(['layer', 'form'], function() {
+        var layer = layui.layer,
+            form = layui.form;
+        $('.shenhe').click(function(){
+            layer.open({
+                btn: ['确定','取消'],//按钮
+                title:'确认审核',
+                content :'确定要审核调查吗？',
+                area: ['260px', '150px'],
+                icon : 3,
+                yes:function(index,layero){
+                    layer.open({
+                        btn: ['好'],//按钮
+                        title: '提示',
+                        content: '审核失败',
+                        area: ['260px', '150px'],
+                        icon: 2,
+                    })
+                }
+            });
+        })
+    });
+    //查看弹窗事件
+    console.log($('.chakan'))
+    for(var  i= 0 ; i< $('.chakan').length ; i++){
+        (function(i){
+            $('.chakan').eq(i).click(function(){
+                layer.open({
+                    type: 1,
+                    title: '调查明细',
+                    area: ['700px','90%'], //宽高
+                    content:'<div style="background: white;padding: 15px 30px">\n' +
+                    '                <h2 style="margin-bottom: 10px">对教员授课实施的评审</h2>\n' +
+                    '                <table class="layui-table" lay-skin="line">\n' +
+                    '                    <tbody>\n' +
+                    '                    <tr>\n' +
+                    '                        <td>1.讲师对所授课程的整体把握程度</td>\n' +
+                    '                        <td><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png">3分</td>\n' +
+                    '                    </tr>\n' +
+                    '                    <tr>\n' +
+                    '                        <td>2.讲师在授课时所做的知识点小姐、重点难点总结</td>\n' +
+                    '                        <td><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png">3分</td>\n' +
+                    '                    </tr>\n' +
+                    '                    <tr>\n' +
+                    '                        <td>3.讲师授课准备是否充分</td>\n' +
+                    '                        <td><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png">3分</td>\n' +
+                    '                    </tr>\n' +
+                    '                    <tr>\n' +
+                    '                        <td>4.讲师对学员的问题是否到位、易于理解</td>\n' +
+                    '                        <td><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png">5分</td>\n' +
+                    '                    </tr>\n' +
+                    '                    <tr>\n' +
+                    '                        <td>5.对教学充满热情，讲课认真、投入</td>\n' +
+                    '                        <td><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png">5分</td>\n' +
+                    '                    </tr>\n' +
+                    '                    <tr>\n' +
+                    '                        <td>6.讲师有无根据大家的学习情况及时给大家做串讲和集中专题辅导</td>\n' +
+                    '                        <td><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png">5分</td>\n' +
+                    '                    </tr>\n' +
+                    '                    <tr>\n' +
+                    '                        <td>7.在授课过程中，是否条理清晰、易于理解</td>\n' +
+                    '                        <td><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png">5分</td>\n' +
+                    '                    </tr>\n' +
+                    '                    <tr>\n' +
+                    '                        <td>8.是否有关于学习方法方面的辅导</td>\n' +
+                    '                        <td><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png">5分</td>\n' +
+                    '                    </tr>\n' +
+                    '                    <tr>\n' +
+                    '                        <td>9.有无及时、准确地解答大家的疑问和调试程序错误</td>\n' +
+                    '                        <td><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png">5分</td>\n' +
+                    '                    </tr>\n' +
+                    '                    <tr>\n' +
+                    '                        <td>10.有无主动地帮助大家发现并解决实现过程中的问题</td>\n' +
+                    '                        <td><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png">5分</td>\n' +
+                    '                    </tr>\n' +
+                    '                    </tbody>\n' +
+                    '                </table>\n' +
+                    '            </div>\n' +
+                    '            <div style="background: white;padding: 15px 30px">\n' +
+                    '                <h2 style="margin-bottom: 10px">对教员学习管理的评审</h2>\n' +
+                    '                <table class="layui-table" lay-skin="line">\n' +
+                    '                    <tbody>\n' +
+                    '                    <tr>\n' +
+                    '                        <td>1.是否有效地进行提升班级学习气氛</td>\n' +
+                    '                        <td><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png">5分</td>\n' +
+                    '                    </tr>\n' +
+                    '                    <tr>\n' +
+                    '                        <td>2.讲师的授课精神面貌是否积极、主动</td>\n' +
+                    '                        <td><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png">2分</td>\n' +
+                    '                    </tr>\n' +
+                    '                    <tr>\n' +
+                    '                        <td>3.讲师是有有及时针对学员的反馈作出积极、正确的回应</td>\n' +
+                    '                        <td><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png">2分</td>\n' +
+                    '                    </tr>\n' +
+                    '                    <tr>\n' +
+                    '                        <td>4.能否经常与大家相互沟通，了解大家的想法、需求</td>\n' +
+                    '                        <td><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png">2分</td>\n' +
+                    '                    </tr>\n' +
+                    '                    <tr>\n' +
+                    '                        <td>5.能否维持良好的班级学习气氛</td>\n' +
+                    '                        <td><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png">2分</td>\n' +
+                    '                    </tr>\n' +
+                    '                    <tr>\n' +
+                    '                        <td>6.严格要求学生，其言传身教有助于学生治学与做人</td>\n' +
+                    '                        <td><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png"><img src="img/icon_score_checked.png">4分</td>\n' +
+                    '                    </tr>\n' +
+                    '                    </tbody>\n' +
+                    '                </table>\n' +
+                    '            </div>\n' +
+                    '            <div style="background: white;padding: 15px 30px">\n' +
+                    '                <h2 style="margin-bottom: 10px">对教员学习管理的评审</h2>\n' +
+                    '                <div style="width: 100%;height: 100px;background: white;border: 1px solid #9F9F9F">对老师授课过程的建议</div>\n' +
+                    '            </div>\n' +
+                    '            <div style="background: white ;padding: 15px 30px">\n' +
+                    '                <h2 style="margin-bottom: 10px">对本班级管理的建议</h2>\n' +
+                    '                <div style="width: 100%;height: 100px;background: white;border: 1px solid #9F9F9F">对老师授课过程的建议</div>\n' +
+                    '            </div>'
+                });
+            })
+        })(i)
+    }
+</script>
+</body>
+</html>

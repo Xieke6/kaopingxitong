@@ -1,0 +1,30 @@
+.layui-form .layui-form-item .layui-input-block span {
+  display: inline-block;
+  height: 38px;
+  width: 38px;
+  border-radius: 50%;
+  border: #1E9FFF 1px solid;
+  font-size: 30px;
+  text-align: center;
+  line-height: 38px;
+  margin: 0 5px;
+  cursor: pointer; }
+.layui-form .layui-form-item .layui-input-block .jialeimu {
+  background: #1E9FFF;
+  color: white; }
+.layui-form .layui-form-item .layui-input-block .jiawenti {
+  background: #1E9FFF;
+  color: white; }
+.layui-form .layui-form-item .layui-input-block .jianleimu {
+  color: #1E9FFF; }
+.layui-form .layui-form-item .layui-input-block .jianwenti {
+  color: #1E9FFF; }
+.layui-form .layui-form-item .layui-input-block .layui-input {
+  width: 70%;
+  float: left; }
+.layui-form .layui-form-item .layui-input-block .layui-textarea {
+  width: 70%; }
+
+.anniu {
+  float: right;
+  margin-right: 5%; }

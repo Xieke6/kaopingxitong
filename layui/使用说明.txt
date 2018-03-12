@@ -1,0 +1,21 @@
+当前版本：V2.2.3
+更新日期：2017-11-27
+
+1、解压layui文件夹
+
+2、将layui整个文件夹拷贝入DIV CSS项目文件夹，可直接放项目/网站根目录下
+
+3、html引入CSS文件
+<link rel="stylesheet" href="layui/css/layui.css">
+
+4、html引入JS文件
+<script src="layui/layui.js"></script>
+<script>
+//有layui网页特效的JS代码 输入区
+
+</script>
+
+5、其它
+更多 ui网页元素布局、更多实用网页特效应用插件
+可进入 layui官网或thinkcss拷用 www.thinkcss.com/kaoyong/
+查找需要网页布局 代码资源 并拷贝代码使用。
